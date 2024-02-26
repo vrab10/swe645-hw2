@@ -1,0 +1,140 @@
+
+<!DOCTYPE html> 
+<html> 
+  
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" 
+          content="width=device-width, 
+                   initial-scale=1.0"> 
+    <title>Student Survey Form</title> 
+</head>
+
+<style>
+    
+    .form-container {
+      width: 300px; 
+      margin: 0 auto; 
+    }
+  
+    .form-container .class1 label {
+        display: inline-block;
+        width: 100px; 
+        text-align: right;
+        margin-right: 10px;
+    }
+
+    .form-container .class1 input[type="text"],
+    .form-container .class1 input[type="tel"],
+    .form-container .class1 input[type="email"],
+    .form-container .class1 input[type="date"] {
+        width: 150px; 
+        padding: 5px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+</style>  
+
+<div class="form-container"> 
+    <h1 style="text-align: center;">Student Survey Form</h1> 
+
+    <form id=""surveyForm>
+    <div class="class1">
+    <label for="firstName">First Name: *</label>
+    <input type="text" id="firstName" name="firstName" required><br><br>
+    
+    <label for="lastName">Last Name: *</label>
+    <input type="text" id="lastName" name="lastName" required><br><br>
+
+    <label for="streetAddress">Street Address: *</label>
+    <input type="text" id="streetAddress" name="streetAddress" required><br><br>
+
+    <label for="city">City: *</label>
+    <input type="text" id="city" name="city" required><br><br>
+
+    <label for="state">State: *</label>
+    <input type="text" id="state" name="state" required><br><br>
+
+    <label for="zip">Zip Code: *</label>
+    <input type="text" id="zip" name="zip" required><br><br>
+
+    <label for="telephone">Telephone Number: *</label>
+    <input type="tel" id="telephone" name="telephone" required><br><br>
+
+    <label for="email">Email: *</label>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="dateOfSurvey">Date of Survey: *</label>
+    <input type="date" id="dateOfSurvey" name="dateOfSurvey" required><br><br>
+    </div>
+
+    <p>Please select the one thing you liked the most about the campus:</p>
+    <label><input type="checkbox" name="likedMost" value="students">Students</label><br>
+    <label><input type="checkbox" name="likedMost" value="location">Location</label><br>
+    <label><input type="checkbox" name="likedMost" value="campus">Campus</label><br>
+    <label><input type="checkbox" name="likedMost" value="atmosphere">Atmosphere</label><br>
+    <label><input type="checkbox" name="likedMost" value="dormRooms">Dorm Rooms</label><br>
+    <label><input type="checkbox" name="likedMost" value="sports">Sports</label><br>
+
+    <p>How did you become interested in the university?</p>
+    <label><input type="radio" name="interest" value="friends">Friends</label><br>
+    <label><input type="radio" name="interest" value="television">Television</label><br>
+    <label><input type="radio" name="interest" value="Internet">Internet</label><br>
+    <label><input type="radio" name="interest" value="other">Other</label><br>
+
+    <p></p>
+    <label for="likelihood">Likelihood of Recommending:</label><br>
+    <select id="likelihood" name="likelihood">
+    <option value="very_likely">Very Likely</option>
+    <option value="likely">Likely</option>
+    <option value="unlikely">Unlikely</option>
+    </select><br>
+
+    <p></p>
+  
+    <label for="raffle">Raffle (Enter at least ten comma-separated numbers from 1 through 100):</label>
+    <input type="text" id="raffle" name="raffle" pattern="^([1-9]|[1-9][0-9]|100)(,\s*([1-9]|[1-9][0-9]|100)){9,}$" required>
+    
+    <p></p>
+    <label for="comments">Additional Comments:</label><br>
+    <textarea id="comments" name="comments" rows="4" cols="50"></textarea><br>
+
+    <p></p>
+    
+    <a href="https://lingamaneni-swe645.s3.amazonaws.com/success.html/" style="text-decoration: none;">
+        <button type="submit" style="background-color: #4CAF50; /* Green */
+                                      border: none;
+                                      color: white;
+                                      padding: 10px 20px;
+                                      text-align: center;
+                                      text-decoration: none;
+                                      display: inline-block;
+                                      font-size: 16px;
+                                      margin: 4px 2px;
+                                      cursor: pointer;
+                                      border-radius: 5px;">Submit</button>
+    </a>
+    
+    <a href="http://lingamaneni-swe645.s3-website-us-east-1.amazonaws.com/" style="text-decoration: none;">
+        <button type="button" style="background-color: #f44336; /* Red */
+                                      border: none;
+                                      color: white;
+                                      padding: 10px 20px;
+                                      text-align: center;
+                                      text-decoration: none;
+                                      display: inline-block;
+                                      font-size: 16px;
+                                      margin: 4px 2px;
+                                      cursor: pointer;
+                                      border-radius: 5px;">Cancel</button>
+    </a> 
+     
+  </form>
+
+  
+
+</div>
+  
