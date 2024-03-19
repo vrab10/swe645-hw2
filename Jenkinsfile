@@ -1,41 +1,40 @@
 pipeline {
     agent any
     environment {
-        registry = "yaswanthlingamaneni/swe645-hw2"
-        registryCredential = 'dockerhub'
+        registry = "yaswanthlingamaneni/swe645"
+        credential = 'dockerhub'
     }
     stages {
-        stage('Intialization') {
+        stage('Init') {
             steps {
                 script {
-                    env.date = new Date().format("yyyyMMdd-HHmmss")
+                    env.date = new Date().format("ddMMyyyy")
                 }
             }
         }
-        stage('Building') {
+        stage('BuildImage') {
             steps {
                 script {
-                    docker.withRegistry('', registryCredential) {
+                    docker.withRegistry('', credential) {
                         def image = docker.build("${registry}:${env.date}", ". --no-cache --platform=linux/amd64")
                     }
                 }
             }
         }
-        stage('Pushing') {
+        stage('PushImage') {
             steps {
                 script {
-                    docker.withRegistry('', registryCredential) {
+                    docker.withRegistry('', credential) {
                         def image = docker.image("${registry}:${env.date}")
                         image.push()
                     }
                 }
             }
         }
-        stage('Deploying') {
+        stage('DeployImage') {
             steps {
                 script {
-                    sh "kubectl set image deployment/nodeport container-0=${registry}:${env.date}"
-                    sh "kubectl set image deployment/loadbalancer container-0=${registry}:${env.date}"
+                    sh "kubectl set image deployment/feedback-survey-deployment feedback-survey=${registry}:${env.date}"
                 }
             }
         }
